@@ -1,0 +1,15 @@
+---
+layout: post
+title: "disable java check for  subject alternative names in certificate "
+comments: true
+---
+<p><span style="font-size: small;">when i want to invoke https webservice by certificate(keystore.jks) .</span></p>
+<p><span style="font-size: small;">i get this exception </span></p>
+<p><span style="font-size: small; color: #000080;">&nbsp;java.security.cert.CertificateException: No subject alternative names present</span></p>
+<p><span style="font-size: small;">ip of webservice is 192.168.1.10 but certificate is created for 192.168.1.20<br /></span></p>
+<p><span style="font-size: small;">java check this in client </span><span style="font-size: small;">and throw this exception&nbsp; </span></p>
+<p><a href="http://azizkhani.net/post/2014/06/13/add-host-in-mac-os-.aspx"><span style="font-size: small;">i add host for </span></a><span style="font-size: small;"><a href="http://azizkhani.net/post/2014/06/13/add-host-in-mac-os-.aspx">192.168.1.20&nbsp; in my os and add this line in application</a><br /></span></p>
+<p><span style="font-size: small;">this code disable this check</span></p>
+<p><span style="font-size: small;"><br /></span></p>
+<p><span style="font-size: small; color: #000080;">javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(</span><br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; new javax.net.ssl.HostnameVerifier(){</span><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public boolean verify(String hostname,</span><br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; javax.net.ssl.SSLSession sslSession) {</span><br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (hostname.equals("azizkhanihost")) {</span><br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return true;</span><br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return false;</span><br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br /><span style="font-size: small; color: #000080;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;});</span></p>
+<p>&nbsp;</p>

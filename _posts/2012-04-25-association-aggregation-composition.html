@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Association, Aggregation, Composition"
+comments: true
+---
+<p class="MsoNormal" style="margin: 0in 0in 0pt;">When we have only one relationship between objects, that is called Association<strong><em>.</em></strong> Aggregation and Composition both are specialized form of Association. Composition is again specialize form of Aggregation.</p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><span style="font-size: large;"><strong>Association</strong> </span> is a relationship where all object have their own lifecycle and there is no owner. <strong><span style="color: #ff0000;">Let&rsquo;s take an example of Teacher and Student. Multiple students can associate with single teacher and single student can associate with multiple teachers but there is no ownership between the objects and both have their own lifecycle. Both can create and delete independently.</span></strong></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><span style="font-size: large;"><strong>Aggregation</strong> </span> is a specialize form of Association where all object have their own lifecycle but there is ownership and child object can not belongs to another parent object. <strong><span style="color: #ff0000;">Let&rsquo;s take an example of Department and teacher. A single teacher can not belongs to multiple departments, but if we delete the department teacher object will not destroy. We can think about &ldquo;has-a&rdquo; relationship.</span></strong></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><span style="font-size: large;"><strong>Composition</strong> </span> is again specialize form of Aggregation and we can call this as a &ldquo;death&rdquo; relationship. It is a strong type of Aggregation. Child object dose not have their lifecycle and if parent object deletes all child object will also be deleted. <strong><span style="color: #ff0000;">Let&rsquo;s take again an example of relationship between House and rooms. House can contain multiple rooms there is no independent life of room and any room can not belongs to two different house if we delete the house room will automatically delete. Let&rsquo;s take another example relationship between Questions and options. Single questions can have multiple options and option can not belong to multiple questions. If we delete questions options will automatically delete.</span></strong></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;">&nbsp;</p>

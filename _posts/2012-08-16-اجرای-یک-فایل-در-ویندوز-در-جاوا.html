@@ -1,0 +1,77 @@
+---
+layout: post
+title: "اجرای یک فایل در ویندوز در جاوا"
+comments: true
+---
+<div class="wp_syntax">
+<div class="code" style="text-align: left;">
+<pre class="java" style="font-family: monospace;"><span style="font-size: small;"><span style="color: #000000; font-weight: bold;">در سیستم عامل ویندوز<br /><br /></span></span><br style="color: #000000; font-weight: bold;" /><span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">java.io.File</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">//Windows solution to view a PDF file</span>
+<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> WindowsPlatformAppPDF <span style="color: #009900;">{</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><span style="color: #003399;">String</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+	  <span style="color: #000000; font-weight: bold;">try</span> <span style="color: #009900;">{</span>
+&nbsp;
+		<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span><span style="color: #009900;">(</span><span style="color: #000000; font-weight: bold;">new</span> <span style="color: #003399;">File</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"c:<span style="color: #000099; font-weight: bold;">\\</span>Java-Interview.pdf"</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span>.<span style="color: #006633;">exists</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+			<span style="color: #003399;">Process</span> p <span style="color: #339933;">=</span> <span style="color: #003399;">Runtime</span>
+			   .<span style="color: #006633;">getRuntime</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span>
+			   .<span style="color: #006633;">exec</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"rundll32 url.dll,FileProtocolHandler c:<span style="color: #000099; font-weight: bold;">\\</span>Java-Interview.pdf"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+			p.<span style="color: #006633;">waitFor</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+		<span style="color: #009900;">}</span> <span style="color: #000000; font-weight: bold;">else</span> <span style="color: #009900;">{</span>
+&nbsp;
+			<span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"File is not exists"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+		<span style="color: #009900;">}</span>
+&nbsp;
+		<span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Done"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+  	  <span style="color: #009900;">}</span> <span style="color: #000000; font-weight: bold;">catch</span> <span style="color: #009900;">(</span><span style="color: #003399;">Exception</span> ex<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+		ex.<span style="color: #006633;">printStackTrace</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+	  <span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span><span style="font-size: small;"><span style="color: #009900;"><br /><br /></span></span><span style="color: #009900;">درتمامی سیسنم عاملها</span><span style="font-size: small;"><span style="color: #009900;"><br /></span></span></pre>
+<div class="wp_syntax">
+<div class="code">
+<pre class="java" style="font-family: monospace;"><span style="color: #000000; font-weight: bold;">package</span> <span style="color: #006699;">org.j2eelist.general.runFile;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">java.awt.Desktop</span><span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">java.io.File</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">//Cross platform solution to view a PDF file</span>
+<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> AnyPlatformAppPDF <span style="color: #009900;">{</span>
+&nbsp;
+	<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><span style="color: #003399;">String</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+	  <span style="color: #000000; font-weight: bold;">try</span> <span style="color: #009900;">{</span>
+&nbsp;
+		<span style="color: #003399;">File</span> pdfFile <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #003399;">File</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"c:<span style="color: #000099; font-weight: bold;">\\</span>Java-Interview.pdf"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+		<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>pdfFile.<span style="color: #006633;">exists</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+&nbsp;
+			<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">(</span>Desktop.<span style="color: #006633;">isDesktopSupported</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+				Desktop.<span style="color: #006633;">getDesktop</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span>.<span style="color: #006633;">open</span><span style="color: #009900;">(</span>pdfFile<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+			<span style="color: #009900;">}</span> <span style="color: #000000; font-weight: bold;">else</span> <span style="color: #009900;">{</span>
+				<span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Awt Desktop is not supported!"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+			<span style="color: #009900;">}</span>
+&nbsp;
+		<span style="color: #009900;">}</span> <span style="color: #000000; font-weight: bold;">else</span> <span style="color: #009900;">{</span>
+			<span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"File is not exists!"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">}</span>
+&nbsp;
+		<span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"Done"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+&nbsp;
+	  <span style="color: #009900;">}</span> <span style="color: #000000; font-weight: bold;">catch</span> <span style="color: #009900;">(</span><span style="color: #003399;">Exception</span> ex<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+		ex.<span style="color: #006633;">printStackTrace</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+	  <span style="color: #009900;">}</span>
+&nbsp;
+	<span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre>
+</div>
+</div>
+<pre class="java" style="font-family: monospace;">&nbsp;</pre>
+</div>
+</div>

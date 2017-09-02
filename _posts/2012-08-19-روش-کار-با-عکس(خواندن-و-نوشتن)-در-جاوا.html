@@ -1,0 +1,35 @@
+---
+layout: post
+title: "روش کار با عکس(خواندن و نوشتن)  در جاوا"
+comments: true
+---
+<p>&nbsp;</p>
+<p style="text-align: right;"><span style="font-size: large;">برای انجام این کار باید از پکیج</span></p>
+<p style="text-align: right;"><span style="font-size: medium;">javax.imageio.ImageIO</span></p>
+<p style="text-align: right;"><span style="font-size: large;">استفاده کرد در این حالت<br />&nbsp;&nbsp;&nbsp; برای خواندن از تکه کد زیر</span></p>
+<p style="text-align: right;"><span style="font-size: large;">&nbsp; </span></p>
+<div class="wp_syntax">
+<div class="code" style="text-align: left;">
+<pre class="java" style="font-family: monospace;"><span style="font-size: medium;"> <span style="color: #003399;">BufferedImage</span> originalImage <span style="color: #339933;">=</span> ImageIO.<span style="color: #006633;">read</span><span style="color: #009900;">(</span><span style="color: #000000; font-weight: bold;">new</span> <span style="color: #003399;">File</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"c:<span style="color: #000099; font-weight: bold;">\\</span>image<span style="color: #000099; font-weight: bold;">\\</span>mypic.jpg"</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></span></pre>
+</div>
+</div>
+<p style="text-align: right;"><span style="font-size: large;">برای ذخیره عکس از تکه کد زیر</span></p>
+<pre class="java" style="font-family: monospace;"><span style="font-size: medium;"> ImageIO.<span style="color: #006633;">write</span><span style="color: #009900;">(</span>originalImage, <span style="color: #0000ff;">"jpg"</span>, <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #003399;">File</span><span style="color: #009900;">(</span><span style="color: #0000ff;">"c:<span style="color: #000099; font-weight: bold;">\\</span>image<span style="color: #000099; font-weight: bold;">\\</span>mypic_new.jpg"</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span></span></pre>
+<p style="text-align: right;">&nbsp;</p>
+<div class="wp_syntax">
+<div class="code" style="text-align: left;">
+<pre class="java" style="font-family: monospace;">&nbsp;</pre>
+</div>
+</div>
+<p style="text-align: right;"><span style="font-size: large;">&nbsp;حال این کد را نگاه کنید</span></p>
+<div class="wp_syntax">
+<div class="code" style="text-align: left;">
+<pre class="java" style="font-family: monospace;">&nbsp;</pre>
+<div class="wp_syntax">
+<div class="code">
+<pre class="java" style="font-family: monospace;"><span style="font-size: medium;"><span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">java.awt.image.BufferedImage</span><span style="color: #339933;">;</span> <br /><span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">java.io.File</span><span style="color: #339933;">;</span> <br /><span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">java.io.IOException</span><span style="color: #339933;">;</span> <br /><span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">javax.imageio.ImageIO</span><span style="color: #339933;">;</span> &nbsp; <span style="color: #000000; font-weight: bold;"><br />public</span> <span style="color: #000000; font-weight: bold;">class</span> ImageTest <span style="color: #009900;">{</span> &nbsp; <br /><br /> <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000066; font-weight: bold;">void</span> main<span style="color: #009900;">(</span><span style="color: #003399;">String</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span> &nbsp; <span style="color: #000000; font-weight: bold;"><br /> try</span> <span style="color: #009900;">{</span> &nbsp; <br /><br /><span style="color: #003399;"> BufferedImage</span> originalImage <span style="color: #339933;">=</span> ImageIO.<span style="color: #006633;">read</span><span style="color: #009900;">(</span><span style="color: #000000; font-weight: bold;">new</span> <span style="color: #003399;">File</span><span style="color: #009900;">(</span> <span style="color: #0000ff;">"c:<span style="color: #000099; font-weight: bold;">\\</span>image<span style="color: #000099; font-weight: bold;">\\</span>mypic.jpg"</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> &nbsp;<br />&nbsp;<br /> ImageIO.<span style="color: #006633;">write</span><span style="color: #009900;">(</span>originalImage, <span style="color: #0000ff;">"jpg"</span>, <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #003399;">File</span><span style="color: #009900;">(</span> <span style="color: #0000ff;">"c:<span style="color: #000099; font-weight: bold;">\\</span>image<span style="color: #000099; font-weight: bold;">\\</span>mypic_new.jpg"</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> &nbsp; <br /><br /><span style="color: #009900;"> }</span> <span style="color: #000000; font-weight: bold;"><br /> catch</span> <span style="color: #009900;">(</span><span style="color: #003399;">IOException</span> e<span style="color: #009900;">)</span> <span style="color: #009900;">{</span><br />&nbsp;<br /> <span style="color: #003399;">System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span><span style="color: #009900;">(</span>e.<span style="color: #006633;">getMessage</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> <br /><br /> <span style="color: #009900;">}</span> &nbsp; <br /><span style="color: #009900;"> }</span> &nbsp; <span style="color: #009900;"><br />}</span></span></pre>
+</div>
+</div>
+<pre class="java" style="font-family: monospace;"><span style="font-size: medium;"><span style="color: #009900;"><br /><br /><br /></span><span style="color: #000000;"><strong>در آینده روشهای پیشرفته تر کار کردن با عکس را توضیح میدم</strong></span></span><span style="font-size: medium;"><span style="color: #009900;"><br /></span></span></pre>
+</div>
+</div>

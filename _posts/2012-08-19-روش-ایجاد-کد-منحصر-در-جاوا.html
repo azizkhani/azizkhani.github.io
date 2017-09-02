@@ -1,0 +1,24 @@
+---
+layout: post
+title: "روش ایجاد کد منحصر در جاوا"
+comments: true
+---
+<p style="text-align: right; direction: rtl;">&nbsp;</p>
+<p style="text-align: right;"><span style="font-size: medium;">حتما تا حالا پیش اومده که بخواهید یک کد منحصر درجاوا تولید کنید </span></p>
+<p style="text-align: right;"><span style="font-size: medium;">برنامه نویسان دات نت این کار را با </span></p>
+<p style="text-align: right;"><span style="font-size: medium;">System.GUID</span></p>
+<p style="text-align: right;"><span style="font-size: medium;">انجام میدن ولی برای انجام این کار در جاوا باید از تکه کد زیر استفاده کنید</span></p>
+<div class="wp_syntax">
+<div class="code">
+<pre class="java" style="font-family: monospace;"><span style="font-size: large;"><span style="color: #000000;">import</span> <span style="color: #006699;">java.util.UUID</span><span style="color: #339933;">;</span> <br /> <span style="color: #000000;">public</span> <span style="color: #000000;">class</span> UniqueIDTest <span style="color: #009900;">{<br /><br /></span> &nbsp;<span style="color: #000000;">public</span> <span style="color: #000000;">static</span> <span style="color: #000066;">void</span> main<span style="color: #009900;">(</span><span style="color: #003399;">String</span><span style="color: #009900;">[</span><span style="color: #009900;">]</span> args<span style="color: #009900;">)</span> <span style="color: #009900;">{</span> <br /> UUID uniqueKey <span style="color: #339933;">=</span> UUID.<span style="color: #006633;">randomUUID</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span> <br /><br /> <span style="color: #003399;"> System</span>.<span style="color: #006633;">out</span>.<span style="color: #006633;">println</span> <span style="color: #009900;">(</span>uniqueKey<span style="color: #009900;">)</span><span style="color: #339933;">;</span> <br /> <span style="color: #009900;"> <br /> }</span> <span style="color: #009900;"><br />}</span></span></pre>
+</div>
+</div>
+<p style="text-align: right;">&nbsp;</p>
+<h3><span style="font-size: medium;"><strong>Result</strong></span></h3>
+<p>&nbsp;</p>
+<div class="wp_syntax">
+<div class="code">
+<pre class="bash" style="font-family: monospace;"><span style="font-size: medium;">0a6a3de7-b974-42d0-af9e-9c23473b09b9</span></pre>
+</div>
+</div>
+<p>&nbsp;</p>

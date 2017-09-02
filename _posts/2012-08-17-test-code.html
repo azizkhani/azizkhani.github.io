@@ -1,0 +1,12 @@
+---
+layout: post
+title: "test code"
+comments: true
+---
+<pre class="brush: groovy;">publicDelivery createDelivery(Order order,User deliveryPerson){
+   Preconditions.checkNotNull(order.getAddress(),"order address");
+   Preconditions.checkArgument(workSchedule.isOnDuty(deliveryPerson, order.getArrivalTime()),
+       "%s is not on duty for %s", deliveryPerson, order);
+
+   returnnewRealDelivery(order, deliveryPerson);
+ }</pre>

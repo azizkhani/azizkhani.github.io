@@ -1,0 +1,6 @@
+---
+layout: post
+title: "jsoup: Java HTML Parser like jquery "
+comments: true
+---
+<p><span style="font-size: medium;">jsoup is a Java library for working with real-world HTML. It provides a very convenient API for extracting and manipulating data, using the best of DOM, CSS, and jquery-like methods.</span><br /><br /><span style="font-size: medium;">example</span><br /><br /><span style="font-size: medium;">String userURL = "http://azizkhani.net/admin/Posts/Add_entry.aspx";</span><br /><br /><span style="font-size: medium;">content of this request contain this tag</span><br /><br />&nbsp;<br /><br /><span style="font-size: medium;">&lt;input type="text" id="txt_title" value="title"&nbsp; /&gt;</span><br /><span style="font-size: medium;">Document doc = Jsoup.connect(userURL).get();</span><br /><br /><span style="font-size: medium;">doc.getElementById("txt_title").val();</span><br /><br /><br /><br />&nbsp;http://jsoup.org/cookbook/extracting-data/selector-syntax<br /><br />&nbsp;</p>
