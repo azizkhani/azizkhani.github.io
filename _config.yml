@@ -50,9 +50,9 @@ author:
   twitter: azizkhani   # eg. daattali
   reddit: azizkhani    # eg. daattali
   google-plus: +azizkhani   # eg. +DeanAttali or 109424658772469020925
-  linkedin: azizkhani  # eg. daattali
+  linkedin: ali-akbar-azizkhani-a2342246  # eg. daattali
   xing: azizkhani      # eg. daattali
-  stackoverflow: yourlink  # eg. "3943160/daattali"
+  stackoverflow: 1152570/ali-akbar-azizkhani  # eg. "3943160/daattali"
   snapchat: yourname  # eg. daattali
   instagram: azizkhaniaa # eg. daattali
   youtube: azizkhani   # eg. user/daattali or channel/daattali
@@ -65,17 +65,17 @@ author:
 # Select which links to show in the footer
 footer-links-active:
   rss: false
-  facebook: true
+  facebook: false
   email: true
   twitter: true
   google-plus: false
   github: true
   reddit: false
-  linkedin: false
+  linkedin: true
   xing: false
-  stackoverflow: false
+  stackoverflow: true
   snapchat: false
-  instagram: false
+  instagram: true
   youtube: false
   spotify: false
   telephone: false
