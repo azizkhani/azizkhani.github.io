@@ -16,8 +16,7 @@ comments: true
 <p class="p1"><span class="s1"><br /></span></p>
 <p class="p1"><span class="s1">it works :D</span></p>
 
-{% highlight docker %}
-
+{% highlight yaml %}
 
 version: '2'
 services:
