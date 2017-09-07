@@ -8,6 +8,12 @@ comments: true
 <p class="p1"><span class="s1"><br /></span></p>
 <p class="p1"><span class="s1">when i want to create docker compose to create container mysql i get this exception&nbsp;</span></p>
 <p class="p1"><span class="s1">after add this &nbsp;</span></p>
+
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
 <p class="p1"><strong style="color: #ff0000;"><span style="font-variant-ligatures: no-common-ligatures;">volumes:</span></strong></p>
 <p class="p1"><span style="color: #ff0000;"><strong><span style="font-variant-ligatures: no-common-ligatures;">&nbsp; db-data:</span></strong></span></p>
 <p class="p1"><span class="s1"><br /></span></p>
