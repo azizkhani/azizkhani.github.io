@@ -7,13 +7,13 @@ Named volume "db-data:/var/lib/mysql:rw" is used in service "vahed98-mysql" but 
 when i want to create docker compose to create container mysql i get this exception 
 after add this  
 
-{% highlight yaml %}
+{% highlight yml %}
 volumes:
   db-data:
 {% endhighlight %}
 it works :D
 
-{% highlight yaml %}
+{% highlight yml %}
 
 version: '2'
 services:
