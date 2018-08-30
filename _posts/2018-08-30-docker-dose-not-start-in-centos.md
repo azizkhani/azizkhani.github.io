@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'docker dose not start in CentOS '
 ---
 ## change this configuration
